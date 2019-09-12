@@ -1,0 +1,72 @@
+{
+  "name": "shopshare",
+  "version": "1.0.0",
+  "description": "shopshare",
+  "private": true,
+  "egg": {
+    "declarations": true
+  },
+  "dependencies": {
+    "axios": "^0.18.1",
+    "egg": "^2.15.1",
+    "egg-mongoose": "^3.2.0",
+    "egg-scripts": "^2.11.0",
+    "ionicons": "^4.6.3",
+    "iview": "^3.5.0",
+    "md5": "^2.2.1",
+    "vue": "^2.5.0",
+    "vue-hot-reload-api": "^2.1.0",
+    "vue-lazyload": "^1.3.2",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1",
+    "vuex-router-sync": "^5.0.0"
+  },
+  "devDependencies": {
+    "autod": "^3.0.1",
+    "autod-egg": "^1.1.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "easywebpack-cli": "^4.0.0",
+    "easywebpack-vue": "^4.0.0",
+    "egg-bin": "^4.11.0",
+    "egg-ci": "^1.11.0",
+    "egg-cors": "^2.0.0",
+    "egg-mock": "^3.21.0",
+    "egg-view-vue-ssr": "^3.0.2",
+    "egg-webpack": "^4.0.0",
+    "egg-webpack-vue": "^2.0.0",
+    "imagemin-webpack-plugin": "^2.4.2",
+    "less": "^2.7.2",
+    "less-loader": "^4.0.0"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "scripts": {
+    "clean": "easy clean",
+    "build": "easy build prod",
+    "start": "egg-scripts start --daemon --title=egg-server-emusic",
+    "stop": "egg-scripts stop --title=egg-server-emusic",
+    "dev": "egg-bin dev",
+    "debug": "egg-bin debug",
+    "test": "npm run lint -- --fix && npm run test-local",
+    "test-local": "egg-bin test",
+    "cov": "egg-bin cov",
+    "lint": "eslint .",
+    "ci": "npm run lint && npm run cov",
+    "autod": "autod"
+  },
+  "ci": {
+    "version": "10"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "橙续缘<lixiaohui2019@sina.cn>",
+  "license": "MIT",
+  "webpack": {
+    "loaders": {
+      "less": true
+    }
+  }
+}

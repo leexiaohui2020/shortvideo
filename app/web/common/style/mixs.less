@@ -1,0 +1,50 @@
+@import 'vars';
+
+.text-cut(@line: 1) {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: @line;
+  -webkit-box-orient: vertical;
+}
+
+.create-margin(@name) {
+  .@{name} {
+    @{name}: @margin-df;
+    &-xs {
+      @{name}: @margin-xs;
+    }
+    &-sm {
+      @{name}: @margin-sm;
+    }
+    &-lg {
+      @{name}: @margin-lg;
+    }
+    &-xl {
+      @{name}: @margin-xl;
+    }
+  }
+}
+
+.create-margin(@name, @a, @b) {
+  .@{name} {
+    @{a}: @margin-df;
+    @{b}: @margin-df;
+    &-xs {
+      @{a}: @margin-xs;
+      @{b}: @margin-xs;
+    }
+    &-sm {
+      @{a}: @margin-sm;
+      @{b}: @margin-sm;
+    }
+    &-lg {
+      @{a}: @margin-lg;
+      @{b}: @margin-lg;
+    }
+    &-xl {
+      @{a}: @margin-xl;
+      @{b}: @margin-xl;
+    }
+  }
+}

@@ -1,0 +1,38 @@
+@import '~common/style/vars';
+@w: 300px;
+
+.login {
+  width: @w;
+  margin: 100px auto;
+  background: @bg-card;
+  box-shadow: 0 1px 1px @shadow-color;
+  border-radius: 4px;
+  overflow: hidden;
+
+  &-brand {
+    text-align: center;
+    padding: @margin-xl @margin-sm 0;
+
+    &-title {
+      font-size: @text-xl;
+    }
+
+    &-logo {
+      @w: 46px;
+      width: @w;
+      height: @w;
+      margin-bottom: @margin-df;
+    }
+  }
+
+  &-form {
+    padding: @margin-xl @margin-sm;
+
+    .ivu-form-item {
+      margin-bottom: 0;
+    }
+    .ivu-form-item + .ivu-form-item {
+      margin-top: @margin-xl;
+    }
+  }
+}

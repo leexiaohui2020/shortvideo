@@ -1,0 +1,33 @@
+@import 'vars';
+@import 'mixs';
+@import 'animation';
+@import '~ionicons/dist/css/ionicons.css';
+
+* {
+  position: relative;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: @text-color;
+  background: @bg-body;
+  font-size: @text-df;
+  min-width: @body-width;
+}
+
+.create-margin(margin);
+.create-margin(margin-top);
+.create-margin(margin-left);
+.create-margin(margin-right);
+.create-margin(margin-bottom);
+.create-margin(margin-tb, margin-top, margin-bottom);
+.create-margin(margin-lr, margin-left, margin-right);
+
+.create-margin(padding);
+.create-margin(padding-top);
+.create-margin(padding-left);
+.create-margin(padding-right);
+.create-margin(padding-bottom);
+.create-margin(padding-tb, padding-top, padding-bottom);
+.create-margin(padding-lr, padding-left, padding-right);
