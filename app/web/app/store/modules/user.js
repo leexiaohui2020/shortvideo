@@ -22,7 +22,7 @@ export default {
 
   mutations: {
     setState(state, opts = {}) {
-      Object.entries(opts).forEach((key, value) => state[key] = value)
+      Object.entries(opts).forEach(([key, value]) => state[key] = value)
     }
   }
 }

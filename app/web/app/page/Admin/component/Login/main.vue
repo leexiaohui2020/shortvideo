@@ -50,10 +50,6 @@ export default {
         username: '',
         password: ''
       })
-
-      if (this.form.username && this.form.password) {
-        this.$nextTick(() => this.submit())
-      }
     },
 
     async submit() {
@@ -62,7 +58,7 @@ export default {
       this.loading = true
       if (await this.login({ ...this.form })) {
         storage.setItem('admin/lastLogin', this.form)
-        this.$router.push({ name: 'admin' })
+        this.$router.push({ name: 'admin-main' })
       }
       this.loading = false
     },

@@ -1,0 +1,34 @@
+@import '~common/style/vars';
+
+.header {
+  @h: 64px;
+  height: @h;
+  text-align: center;
+  line-height: @h;
+
+  &-title {
+    font-size: @text-xl;
+    color: @text-reverse;
+    background: @color-theme;
+    display: inline;
+    padding: 8px 30px;
+    border-radius: 5px 5px 5px 0;
+    box-shadow: 0 1px 1px 1px @shadow-color-reverse;
+    cursor: pointer;
+  }
+
+  &-logo {
+    width: @h;
+    height: @h;
+    padding: @margin-df;
+    cursor: pointer;
+  }
+
+  &.collapse > &-title {
+    display: none;
+  }
+
+  &:not(.collapse) > &-logo {
+    display: none;
+  }
+}

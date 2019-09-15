@@ -1,0 +1,24 @@
+@import '~common/style/vars';
+
+.tags {
+  @h: 60px;
+  height: @h;
+  display: flex;
+  align-items: center;
+
+  &-item {
+    height: @h;
+    padding: 0 @margin-xl;
+    font-size: @text-df;
+    color: @text-color-l;
+    cursor: pointer;
+
+    & + & {
+      margin-left: @margin-sm;
+    }
+
+    &:hover, &.active {
+      color: @text-reverse;
+    }
+  }
+}
