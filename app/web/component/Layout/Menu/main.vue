@@ -31,3 +31,10 @@ export default {
   }
 }
 </script>
+
+<style lang="less">
+@import '~common/style/vars';
+.ivu-menu-item.ivu-menu-item-selected {
+  color: @text-reverse !important;
+}
+</style>
