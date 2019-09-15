@@ -17,6 +17,14 @@ export default {
       }
       ctx.commit('setState', data.data)
       return true
+    },
+
+    async logout(ctx) {
+      ctx.commit('setState', {
+        role: null,
+        token: null,
+        userInfo: null
+      })
     }
   },
 

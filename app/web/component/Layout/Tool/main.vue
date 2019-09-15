@@ -1,6 +1,6 @@
 <template>
   <Tooltip :content="data.name" transfer>
-    <a class="tool" href="javascript:;" @click="click">
+    <a class="tool margin-lr-xs" href="javascript:;" @click="click">
       <Icon :type="data.icon" />
     </a>
   </Tooltip>
