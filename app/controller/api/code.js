@@ -6,6 +6,7 @@ class CodeControler extends Controller {
     const data = await ctx.service.code.getCode(ctx.request.body)
     if (data instanceof Error) {
       ctx.body = { status: 'err', errmsg: data.message }
+      return
     }
     ctx.body = { status: 'ok', data }
   }
@@ -15,6 +16,7 @@ class CodeControler extends Controller {
     const data = await ctx.service.code.addCode(ctx.request.body)
     if (data instanceof Error) {
       ctx.body = { status: 'err', errmsg: data.message }
+      return
     }
     ctx.body = { status: 'ok', data }
   }
@@ -24,6 +26,7 @@ class CodeControler extends Controller {
     const data = await ctx.service.code.rmvCode(ctx.request.body)
     if (data instanceof Error) {
       ctx.body = { status: 'err', errmsg: data.message }
+      return
     }
     ctx.body = { status: 'ok', data }
   }
@@ -33,6 +36,7 @@ class CodeControler extends Controller {
     const data = await ctx.service.code.modCode(ctx.request.body)
     if (data instanceof Error) {
       ctx.body = { status: 'err', errmsg: data.message }
+      return
     }
     ctx.body = { status: 'ok', data }
   }
@@ -42,6 +46,7 @@ class CodeControler extends Controller {
     const data = await ctx.service.code.lstCode(ctx.request.body)
     if (data instanceof Error) {
       ctx.body = { status: 'err', errmsg: data.message }
+      return
     }
     ctx.body = { status: 'ok', data }
   }

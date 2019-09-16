@@ -12,10 +12,13 @@
       <FormItem prop="password" v-if="field.includes('password')">
         <i-input v-model="form.password" type="password" prefix="md-lock" placeholder="密码" />
       </FormItem>
-      <Row class="margin-tb-sm" type="flex" justify="end">
-        <a v-for="(v, k) of tools" :key="k" @click="v.onClick">{{ v.title }}</a>
-      </Row>
-      <Button type="primary" long :loading="loading" @click="submit">{{ submitText }}</Button>
+      <FormItem prop="code" v-if="field.includes('code')">
+        <i-input v-model="form.code" prefix="md-key" placeholder="邀请码" />
+      </FormItem>
+      <FormItem>
+        <Button type="primary" long :loading="loading" @click="submit">{{ submitText }}</Button>
+      </FormItem>
+      <slot />
     </Form>
   </div>
 </template>
@@ -35,11 +38,6 @@ export default {
       default: () => []
     },
 
-    tools: {
-      type: Array,
-      default: () => []
-    },
-
     submitText: {
       type: String,
       default: ''
@@ -48,16 +46,23 @@ export default {
     onSubmit: {
       type: Function,
       required: true
+    },
+
+    value: {
+      type: Object,
+      default: () => {}
     }
   },
   data() {
     return {
       Favicon,
       form: {
-        username: '',
-        password: ''
+        code: this.value.code || '',
+        username: this.value.username || '',
+        password: this.value.password || ''
       },
       rules: {
+        code: [{ required: true, message: '请填写邀请码' }],
         username: [{ required: true, message: '请填写帐号' }],
         password: [{ required: true, message: '请填写密码' }]
       },
@@ -69,7 +74,11 @@ export default {
       if (this.loading) return
       if (!await this.$refs.form.validate()) return
       this.loading = true
-      await this.onSubmit.call(this, this.form)
+      const form = this.field.reduce((map, key) => {
+        map[key] = this.form[key]
+        return map
+      }, {})
+      await this.onSubmit.call(this, form)
       this.loading = false
     }
   }

@@ -9,5 +9,8 @@ module.exports = app => {
   router.post('/api/code/mod', controller.api.code.mod)
   router.post('/api/code/lst', controller.api.code.lst)
 
+  router.post('/api/developer/regist', controller.api.developer.add)
+  router.post('/api/developer/login', controller.api.developer.login)
+
   router.get('/*', controller.app.index)
 }
